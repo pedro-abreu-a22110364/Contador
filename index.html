@@ -42,7 +42,7 @@
         Your browser does not support the video tag.
     </video>
 
-    <div id="countdown">00:00:00</div>
+    <div id="countdown">00:00:00:00</div>
 
     <script>
         function startCountdown(targetDate) {
@@ -57,18 +57,19 @@
                     return;
                 }
 
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                countdownElement.innerHTML = `${hours}:${minutes}:${seconds}`;
+                countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             }
 
             updateCountdown();
             setInterval(updateCountdown, 1000);
         }
 
-        const targetDate = new Date("2025-01-21T20:30:00").getTime();
+        const targetDate = new Date("2025-01-15T00:00:00").getTime();
         startCountdown(targetDate);
     </script>
 
