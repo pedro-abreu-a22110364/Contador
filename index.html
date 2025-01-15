@@ -32,9 +32,10 @@
             background: rgba(0, 0, 0, 0.5);
             padding: 20px;
             border-radius: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 10px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
         }
 
         .time-part {
@@ -43,8 +44,13 @@
             align-items: center;
         }
 
+        .time-part div {
+            font-size: 60px;
+            font-weight: bold;
+        }
+
         .time-part span {
-            font-size: 24px;
+            font-size: 20px;
             margin-top: 10px;
         }
     </style>
