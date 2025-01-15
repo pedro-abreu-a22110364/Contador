@@ -25,6 +25,8 @@
             min-width: 100%;
             min-height: 100%;
             z-index: -1;
+            object-fit: cover;
+            object-position: center;
         }
 
         #countdown {
@@ -36,6 +38,9 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             text-align: center;
+            max-width: 800px;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .time-part {
@@ -53,6 +58,28 @@
             font-size: 20px;
             margin-top: 10px;
         }
+
+        @media (max-width: 768px) {
+            #countdown {
+                font-size: 40px;
+                gap: 10px;
+                padding: 15px;
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 90%;
+            }
+
+            .time-part div {
+                font-size: 50px;
+            }
+
+            .time-part span {
+                font-size: 18px;
+            }
+
+            #background-video {
+                object-position: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -65,19 +92,19 @@
     <div id="countdown">
         <div class="time-part">
             <div id="days">00</div>
-            <span>Dias</span>
+            <span>Days</span>
         </div>
         <div class="time-part">
             <div id="hours">00</div>
-            <span>Horas</span>
+            <span>Hours</span>
         </div>
         <div class="time-part">
             <div id="minutes">00</div>
-            <span>Minutos</span>
+            <span>Minutes</span>
         </div>
         <div class="time-part">
             <div id="seconds">00</div>
-            <span>Segundos</span>
+            <span>Seconds</span>
         </div>
     </div>
 
@@ -107,7 +134,7 @@
             setInterval(updateCountdown, 1000);
         }
 
-        const targetDate = new Date("2025-01-21T20:30:00").getTime();
+        const targetDate = new Date("2025-01-15T00:00:00").getTime();
         startCountdown(targetDate);
     </script>
 
